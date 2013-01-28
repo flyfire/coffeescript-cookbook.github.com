@@ -1,6 +1,6 @@
 ---
 layout: recipe
-title: Embedding JavaScript
+title: 嵌入JavaScript代码
 chapter: Syntax
 ---
 ## Problem

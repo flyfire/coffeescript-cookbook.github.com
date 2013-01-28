@@ -1,6 +1,6 @@
 ---
 layout: recipe
-title: Comparing Ranges
+title: 值域
 chapter: Syntax
 ---
 ## Problem

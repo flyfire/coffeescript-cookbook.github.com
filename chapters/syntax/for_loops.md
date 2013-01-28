@@ -1,6 +1,6 @@
 ---
 layout: recipe
-title: For Loops
+title: For循环
 chapter: Syntax
 ---
 ## Problem

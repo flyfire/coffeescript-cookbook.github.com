@@ -1,9 +1,9 @@
 ---
 layout: recipe
-title: Code Reuse on Client and Server
+title: 在服务端和客户端重用代码
 chapter: Syntax
 ---
-## Problem
+## 问题
 
 You have created some functionality in CoffeeScript that you wish to use on the client with a web browser and on the server with Node.js.
 

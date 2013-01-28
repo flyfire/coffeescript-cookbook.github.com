@@ -55,22 +55,22 @@ chapters:
       <section class="sidebar-block block-short">
         <nav class="navigation pages-nav home-nav">
           <h6><a class="nav-link" href="/"><span class="entypo">&oacute;</span>CoffeeScript Cookbook</a></h6>
-          <small class="thin dimmed">(last updated 28 August, 2012)</small>
+          <small class="thin dimmed">（最后更新时间：2012年8月28号）</small>
         </nav>
       </section>
 
       <section class="sidebar-block">
         <nav class="navigation pages-nav">
           <ul class="plain-list inline-list">
-            <li><a class="nav-link" href="/contributing"><span class="entypo">6</span>Contribute</a></li>
-            <li><a class="nav-link" href="/authors"><span class="entypo">,</span>Authors</a></li>
-            <li><a class="nav-link" href="/license"><span class="entypo">&copy;</span>License</a></li>
+            <li><a class="nav-link" href="/contributing"><span class="entypo">6</span>贡献</a></li>
+            <li><a class="nav-link" href="/authors"><span class="entypo">,</span>作者</a></li>
+            <li><a class="nav-link" href="/license"><span class="entypo">&copy;</span>授权协议</a></li>
           </ul>
         </nav>
       </section>
 
       <section class="sidebar-block">
-        <h5 class="sidebar-title">Chapters Index</h5>
+        <h5 class="sidebar-title">目录</h5>
         <ol class="navigation chapters-list">
           {% for chapter in page.chapters %}
             {% capture url %}/chapters/{{ chapter | replace: ' ', '_' | downcase }}{% endcapture %}
