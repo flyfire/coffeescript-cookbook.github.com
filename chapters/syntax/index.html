@@ -11,7 +11,7 @@ chapter: Syntax
 {% for page in site.pages %}
   {% if page.url contains url %}
     {% unless page.url == indexurl %}
-  <li><a href="{{ page.url}}">{{ page.title }}</a></li>
+  <li><a href=".{{ page.url | replace: url, ''}}">{{ page.title }}</a></li>
     {% endunless %}
   {% endif %}
 {% endfor %}
