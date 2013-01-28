@@ -19,11 +19,11 @@
 
         <article class="content-block recipe-content">
           <h1>在服务端和客户端重用代码</h1>
-          <h2 id='id85'>问题</h2>
+          <h2 id='id8'>问题</h2>
 
 <p>你用CoffeeScript写了一些功能模块，你既希望它们能在客户端跑在浏览器上，也希望能够通过Node.js跑在服务端。</p>
 
-<h2 id='id86'>解决方案</h2>
+<h2 id='id9'>解决方案</h2>
 
 <p>通过下面这样的方式暴露这些功能模块：</p>
 <div class='highlight'><pre><code class='coffeescript'><span class='c1'># simpleMath.coffee</span>
@@ -47,7 +47,7 @@
 	<span class='nv'>subtract: </span><span class='nx'>subtract</span>
 	<span class='nv'>square: </span><span class='nx'>square</span>
 </code></pre></div>
-<h2 id='id87'>讨论</h2>
+<h2 id='id10'>讨论</h2>
 
 <p>如上例，我们创建了一个新的命名空间——SimpleMath。如果<code>exports</code>存在，我们的类就做为一个Node.js模块暴露出来，如果<code>exports</code><em>不</em>存在，SimpleMath被加到全局中，然后就可以在页面上使用它了。</p>
 
@@ -87,7 +87,7 @@
 </code></pre></div>
 <p>结果：</p>
 
-<h1 id='id88'>一个简单的例子</h1>
+<h1 id='id11'>一个简单的例子</h1>
 
 <ul>
 <li>5 + 6 = 11</li>
