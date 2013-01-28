@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>CoffeeScript Cookbook &raquo; 在服务端和客户端重用代码</title>
-    <link type="image/x-icon" rel="shortcut icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link type="image/x-icon" rel="shortcut icon" href="../../images/favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css" type="text/css">
   </head>
   <body>
 
@@ -19,11 +19,11 @@
 
         <article class="content-block recipe-content">
           <h1>在服务端和客户端重用代码</h1>
-          <h2 id='id50'>问题</h2>
+          <h2 id='id85'>问题</h2>
 
 <p>你用CoffeeScript写了一些功能模块，你既希望它们能在客户端跑在浏览器上，也希望能够通过Node.js跑在服务端。</p>
 
-<h2 id='id51'>解决方案</h2>
+<h2 id='id86'>解决方案</h2>
 
 <p>通过下面这样的方式暴露这些功能模块：</p>
 <div class='highlight'><pre><code class='coffeescript'><span class='c1'># simpleMath.coffee</span>
@@ -47,7 +47,7 @@
 	<span class='nv'>subtract: </span><span class='nx'>subtract</span>
 	<span class='nv'>square: </span><span class='nx'>square</span>
 </code></pre></div>
-<h2 id='id52'>讨论</h2>
+<h2 id='id87'>讨论</h2>
 
 <p>如上例，我们创建了一个新的命名空间——SimpleMath。如果<code>exports</code>存在，我们的类就做为一个Node.js模块暴露出来，如果<code>exports</code><em>不</em>存在，SimpleMath被加到全局中，然后就可以在页面上使用它了。</p>
 
@@ -87,7 +87,7 @@
 </code></pre></div>
 <p>结果：</p>
 
-<h1 id='id53'>一个简单的例子</h1>
+<h1 id='id88'>一个简单的例子</h1>
 
 <ul>
 <li>5 + 6 = 11</li>
@@ -95,8 +95,8 @@
         </article>
 
         <footer class="footer">
-          <p>Is this recipe wrong, incomplete, or non idiomatic? Help fix it by reading the <a href="/contributing">Contributor's Guide</a>!</p>
-          <a href="/license"><img src="/images/cc_by_badge.png" /></a>
+          <p>Is this recipe wrong, incomplete, or non idiomatic? Help fix it by reading the <a href="../../contributing">Contributor's Guide</a>!</p>
+          <a href="/license"><img src="../../images/cc_by_badge.png" /></a>
         </footer>
       </section>
 
@@ -114,9 +114,9 @@
       <section class="sidebar-block">
         <nav class="navigation pages-nav">
           <ul class="plain-list inline-list">
-            <li><a class="nav-link" href="/contributing"><span class="entypo">6</span>贡献</a></li>
-            <li><a class="nav-link" href="/authors"><span class="entypo">,</span>作者</a></li>
-            <li><a class="nav-link" href="/license"><span class="entypo">&copy;</span>授权协议</a></li>
+            <li><a class="nav-link" href="../../contributing"><span class="entypo">6</span>贡献</a></li>
+            <li><a class="nav-link" href="../../authors"><span class="entypo">,</span>作者</a></li>
+            <li><a class="nav-link" href="../../license"><span class="entypo">&copy;</span>授权协议</a></li>
           </ul>
         </nav>
       </section>
@@ -3859,7 +3859,7 @@
 
     </aside>
 
-    <script type="text/javascript" src="/js/scripts.js"></script>
+    <script type="text/javascript" src="../../js/scripts.js"></script>
 
  </body>
 </html>
