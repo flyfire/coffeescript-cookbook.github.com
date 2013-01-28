@@ -8,4 +8,3 @@ exclude:
   - Procfile
   - Gemfile
   - Gemfile.lock
-source: ./zh-CN/
