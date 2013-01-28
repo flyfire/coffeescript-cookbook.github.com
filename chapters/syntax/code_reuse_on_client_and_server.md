@@ -5,11 +5,11 @@ chapter: Syntax
 ---
 ## 问题
 
-You have created some functionality in CoffeeScript that you wish to use on the client with a web browser and on the server with Node.js.
+你用CoffeeScript写了一些功能模块，你既希望它们能在客户端跑在浏览器上，也希望能够通过Node.js跑在服务端。
 
-## Solution
+## 解决方案
 
-Export the functionality in the following manner:
+通过下面这样的方式暴露这些功能模块：
 
 {% highlight coffeescript %}
 
@@ -36,11 +36,11 @@ class SimpleMath.Calculator
 
 {% endhighlight %}
 
-## Discussion
+## 讨论
 
-In the above example, we create a new namespace called SimpleMath.  If `export` is available, our class is exported as a Node.js module.  If `export` is *not* available, then SimpleMath is added to the global namespace and available to our web page.
+如上例，我们创建了一个新的命名空间——SimpleMath。如果`exports`存在，我们的类就做为一个Node.js模块暴露出来，如果`exports`*不*存在，SimpleMath被加到全局中，然后就可以在页面上使用它了。
 
-In Node.js, we can include our module using the `require` command.
+在Node.js中，我们可以使用`require`命令包含这个模块。
 
 {% highlight console %}
 
@@ -57,7 +57,7 @@ undefined
 
 {% endhighlight %}
 
-In our web page, we can include our module using by including it as a script.
+在页面中，把它作为一个script引入进来我们就可以使用这个模块了。
 
 {% highlight html %}
 
@@ -84,7 +84,7 @@ In our web page, we can include our module using by including it as a script.
 
 {% endhighlight %}
 
-Result:
+结果：
 
-#A SimpleMath Example
+#一个简单的例子
 * 5 + 6 = 11
