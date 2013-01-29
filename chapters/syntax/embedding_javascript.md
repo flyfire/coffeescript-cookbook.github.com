@@ -3,13 +3,13 @@ layout: recipe
 title: 嵌入JavaScript代码
 chapter: Syntax
 ---
-## Problem
+## 问题
 
-You want to include some found/pre-written JavaScript code inline with your CoffeeScript.
+你需要在CoffeeScript中插入已有的或预编写的JavaScript代码。
 
-## Solution
+## 方法
 
-Wrap the JavaScript with backticks:
+把JavaScript代码包裹在重音符中：
 
 {% highlight coffeescript %}
 `function greet(name) {
@@ -21,9 +21,9 @@ greet "Coffee"
 # => "Hello Coffee"
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-This is a simple way to integrate small snippets of JavaScript code into your CoffeeScript without converting it over to use CoffeeScript syntax. As shown in the [CoffeeScript Language Reference](http://jashkenas.github.com/coffee-script/#embedded) you can mix the two languages to a certain extent:
+这种把JavaScript代码块插入到CoffeeScript中的方式很简单，无需根据CoffeeScript的语法做转化。[CoffeeScript语言参考](http://jashkenas.github.com/coffee-script/#embedded)中有说，你可以在某种程度上混合这两种语言。
 
 {% highlight coffeescript %}
 hello = `function (name) {
@@ -34,4 +34,4 @@ hello "Coffee"
 
 {% endhighlight %}
 
-Here the `hello` variable is still in CoffeeScript, but is assigned a function written in JavaScript.
+上例中，`hello`变量是CoffeeScript中的，但是给它赋值了一个函数，而这个函数是使用JavaScript编写的。

@@ -3,11 +3,11 @@ layout: recipe
 title: For循环
 chapter: Syntax
 ---
-## Problem
+## 问题
 
-You need to iterate over an array, object or range with a for loop.
+你需要使用一个for循环来迭代一个数组、对象或者值域。
 
-## Solution
+## 方法
 
 {% highlight coffeescript %}
 # for(i = 1; i<= 10; i++)
@@ -24,6 +24,7 @@ x * x for x in [1..10]
 # = > [1,4,9,16,25,36,49,64,81,100]
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-Comprehensions replace for loops in CoffeeScript, but they simply compile into the traditional javascript equivalent for-loop.
+在CoffeeScript中，可以使用列表解析（List Comprehensions）代替for循环，但最终编译为JavaScript时，还是传统的for循环。
+

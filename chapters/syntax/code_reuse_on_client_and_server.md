@@ -7,7 +7,7 @@ chapter: Syntax
 
 你用CoffeeScript写了一些功能模块，你既希望它们能在客户端跑在浏览器上，也希望能够通过Node.js跑在服务端。
 
-## 解决方案
+## 方法
 
 通过下面这样的方式暴露这些功能模块：
 
@@ -36,7 +36,7 @@ class SimpleMath.Calculator
 
 {% endhighlight %}
 
-## 讨论
+## 详解
 
 如上例，我们创建了一个新的命名空间——SimpleMath。如果`exports`存在，我们的类就做为一个Node.js模块暴露出来，如果`exports`*不*存在，SimpleMath被加到全局中，然后就可以在页面上使用它了。
 

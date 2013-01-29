@@ -1,15 +1,15 @@
 ---
 layout: recipe
-title: Chaining Calls to an Object
+title: 链式调用
 chapter: Classes and Objects
 ---
-## Problem
+## 问题
 
-You want to call multiple methods on a single object without having to reference that object each time.
+多次调用同一个对象的方法时，你希望可以可以不用每次都引用这个对象。
 
-## Solution
+## 方法
 
-Return the `this` (i.e. `@`) object after every chained method.
+在每一个需要链式调用的方法最后返回`this`（即`@`）。
 
 {% highlight coffeescript %}
 class CoffeeCup
@@ -37,15 +37,15 @@ eveningCup.properties # => { strength: 'dark', cream: true, sugar: true }
 
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-The jQuery library uses a similar approach by returning a selector object from every relevant method, modifying it as subsequent methods tweak the selection:
+jQuery类库使用的方式也类似，每一个相关的方法都会返回一个选择器对象（即jQuery对象），通过调整选择来修改后续的方法。
 
 {% highlight coffeescript %}
 $('p').filter('.topic').first()
 {% endhighlight %}
 
-For your own objects, a touch of metaprogramming can automate the setup process and explicitly state the purpose of returning *this*.
+对于你自己的对象，使用点元编程的手法，就能够自动化地实现创建过程，明确地表明返回`this`的意图。
 
 {% highlight coffeescript %}
 addChainedAttributeAccessor = (obj, propertyAttr, attr) ->

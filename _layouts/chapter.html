@@ -81,7 +81,11 @@ chapters:
                 {% for site_page in site.pages %}
                   {% if site_page.url contains url %}
                     {% unless site_page.url == indexurl %}
-                      <li class="list-item recipe{% if page.url == site_page.url %} page-active{% endif %}"><a class="recipe-title" href=".{{ site_page.url | replace: url, ''}}">{{ site_page.title }}</a></li>
+                        {% if page.url contains chapter %}
+                            <li class="list-item recipe{% if page.url == site_page.url %} page-active{% endif %}">
+                            <a class="recipe-title" href=".{{ site_page.url | replace: url, ''}}">{{ site_page.title }}</a>
+                        {% endif %}
+                    </li>
                     {% endunless %}
                   {% endif %}
                 {% endfor %}

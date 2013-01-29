@@ -3,13 +3,13 @@ layout: recipe
 title: 值域
 chapter: Syntax
 ---
-## Problem
+## 问题
 
-You want to know if a variable is inside a given range.
+怎么判断某个变量的值在一个区间内。
 
-## Solution
+## 方法
 
-Use CoffeeScript's chained comparison syntax.
+使用CoffeeScript链式比较的语法。
 
 {% highlight coffeescript %}
 maxDwarfism = 147
@@ -21,12 +21,12 @@ normalHeight = maxDwarfism < height < minAcromegaly
 # => true
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-This is a nice feature lifted from Python. Instead of writing out the full comparison like
+这是从Python移植过来的特性，无需像下面这样写出完整的比较：
 
 {% highlight coffeescript %}
 normalHeight = height > maxDwarfism && height < minAcromegaly
 {% endhighlight %}
 
-CoffeeScript allows us to chain the two comparisons together in a form that more closely matches the way a mathematician would write it.
+CoffeeScript允许我们把两个比较连在一起，这种形式更加符合数学上的书写方式。
