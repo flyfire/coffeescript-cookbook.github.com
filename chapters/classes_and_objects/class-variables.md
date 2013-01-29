@@ -1,13 +1,13 @@
 ---
 layout: recipe
-title: Class Variables
+title: 类变量
 chapter: Classes and Objects
 ---
-## Problem
+## 问题
 
-You want to create a class variable.
+你需要一个类变量。
 
-## Solution
+## 方法
 
 {% highlight coffeescript %}
 class Zoo
@@ -25,6 +25,6 @@ zoo.MAX_ZOOKEEPERS
 # => 3
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-Coffeescript will store these values on the object itself rather than on the object prototype (and thus on individual object instances), which conserves memory and gives a central location to store class-level values.
+CoffeeScript会把这些值直接存储在这个对象（构造函数）中，而不是其原型上（即也不会再独立的实例上），这样不但节省了内存，还提供了一个中心，用于存储类级别的值。
