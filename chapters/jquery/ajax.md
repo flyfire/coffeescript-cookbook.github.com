@@ -3,11 +3,11 @@ layout: recipe
 title: AJAX
 chapter: jQuery
 ---
-## Problem
+## 问题
 
-You want to make AJAX calls using jQuery.
+你想使用jQuery的AJAX调用
 
-## Solution
+## 方法
 
 {% highlight coffeescript %}
 $ ?= require 'jquery' # For Node.js compatibility
@@ -32,7 +32,7 @@ $(document).ready ->
 
 {% endhighlight %}
 
-jQuery 1.5 and later have added a new, supplemental API for handling different callbacks.
+jQuery 1.5 及更高的版本补充了一个新的API，用于处理不同的回调事件。
 
 {% highlight coffeescript %}
 	request = $.get '/'
@@ -40,6 +40,6 @@ jQuery 1.5 and later have added a new, supplemental API for handling different c
 	request.error (jqXHR, textStatus, errorThrown) -> $('body').append "AJAX Error: ${textStatus}."
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-The jQuery and $ variables can be used interchangeably. See also [Callback bindings](/chapters/jquery/callback-bindings-jquery).
+jQuery和 $ 这两个变量可以交换使用。参看 [回调绑定](/coffeescript-cookbook.github.com/chapters/jquery/callback-bindings-jquery).
