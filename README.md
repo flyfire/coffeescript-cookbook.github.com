@@ -1,8 +1,8 @@
-CoffeeScript私房菜 
+CoffeeScript Cookbook
 =============
 
-CoffeeScript私房菜是一个为CoffeeScript语言而生的社区化运作的站点。
-希望您能贡献自己的菜谱，让这个站点越来越好！
+CoffeeScript Cookbook is a community run website for the CoffeeScript language.
+We want you to write recipes and make the site better!
 
 Contributing
 -----------
