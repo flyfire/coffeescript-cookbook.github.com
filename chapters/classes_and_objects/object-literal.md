@@ -1,26 +1,26 @@
 ---
 layout: recipe
-title: Create an Object Literal if It Does Not Already Exist
+title: 不存在就赋值为对象字面量
 chapter: Classes and Objects
 ---
-## Problem
+## 问题
 
-You want to initialize an object literal, but you do not want to overwrite the object if it already exists.
+初始化一个对象字面量，但不能覆盖了已有的对象。
 
-## Solution
+## 方法
 
-Use the Existential operator
+使用存在操作符
 
 {% highlight coffeescript %}
 window.MY_NAMESPACE ?= {}
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-This is equivalent to the following JavaScript:
+它下面的这段代码等价：
 
 {% highlight javascript %}
 window.MY_NAMESPACE = window.MY_NAMESPACE || {};
 {% endhighlight %}
 
-Common JavaScript technique, using object literal to define a namespace. This saves us from clobbering the namespace if it already exists.
+这种使用对象字面量来定义一个命名空间是一种常用的JavaScript技巧，这能够避免破坏了命名空间，如果已经存在的话。

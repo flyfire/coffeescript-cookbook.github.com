@@ -1,15 +1,15 @@
 ---
 layout: recipe
-title: Class Methods and Instance Methods
+title: 类方法和实例方法
 chapter: Classes and Objects
 ---
-## Problem
+## 问题
 
-You want to create a class methods and instance methods.
+我想创建一个类方法和实例方法
 
-## Solution
+## 方法
 
-### Class Method
+### 类方法
 
 {% highlight coffeescript %}
 
@@ -34,7 +34,8 @@ song.get_count()
 
 {% endhighlight %}
 
-### Instance Method
+### 实例方法
+
 {% highlight coffeescript %}
 
 class Songs
@@ -56,6 +57,6 @@ Songs.get_count()
 {% endhighlight %}
 
 
-## Discussion
+## 详细
 
-Coffeescript will store class methods (also called static methods) on the object itself rather than on the object prototype (and thus on individual object instances), which conserves memory and gives a central location to store class-level values.
+CoffeeScript把类方法放到类对象本身，而不是放到类对象的原型上，这样能够节省内存，且能够集中式地存储类属性。

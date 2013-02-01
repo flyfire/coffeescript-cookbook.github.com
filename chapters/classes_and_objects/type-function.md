@@ -1,15 +1,15 @@
 ---
 layout: recipe
-title: A CoffeeScript Type Function
+title: CoffeeScript式的Type函数
 chapter: Classes and Objects
 ---
-## Problem
+## 问题
 
-You'd like to know the type of a function without using typeof. (See http://javascript.crockford.com/remedial.html for more information on why typeof is pretty inferior.)
+不借助`typeof`获取一个对象的类型（关于为什么`typeof`不给力的原因请参考http://javascript.crockford.com/remedial.html，）。
 
-## Solution
+## 方法
 
-Use the following function:
+使用下面这个函数：
 
 {% highlight coffeescript %}
 type = (obj) ->
@@ -24,11 +24,11 @@ type = (obj) ->
   return "object"
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-This function was modeled on jQuery's $.type function. (http://api.jquery.com/jQuery.type/)
+这个函数参考了jQuery的`$.type`函数。（http://api.jquery.com/jQuery.type/）
 
-Note that, as an alternative to type checking, you can often use duck typing and the existential operator together to eliminating the need to examine an object's type, in certain cases.  For example, here is exception-free code that pushes an element to an array, if myArray is in fact an array (or array-like, with a push function), and does nothing otherwise.
+注意，作为类型检测的替代，在某些场景下，你还可以使用鸭子类型结合存在操作符来避免对某个对象类型的检测。例如，下面是一段不会发生异常的代码，如果`myArray`确实是一个数组时（或者为类数组，，有`push`方法），把元素放到数组中，否则什么都不做。
 
 {% highlight coffeescript %}
 myArray?.push? myValue

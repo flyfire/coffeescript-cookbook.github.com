@@ -1,29 +1,29 @@
 ---
 layout: recipe
-title: Capitalizing Words
+title: 首字母大写
 chapter: Strings
 ---
-## Problem
+## 问题
 
-You want to capitalize the first letter of every word in a string.
+让一段字符串中每一个单词首字母大写。
 
-## Solution
+## 方法
 
-Use the split, map, join pattern: Split the string into words, then use a map to capitalize the first letter and lowercase all other letters of each word before gluing the string back together with join.
+使用`split`、`map`、`join`模式：把字符串分割成一个个单词，然后把每个单词映射为首字母大且其他字母小写的新单词，最后使用`join`方法恢复成一个字符串。
 
 {% highlight coffeescript %}
 ("foo bar baz".split(' ').map (word) -> word[0].toUpperCase() + word[1..-1].toLowerCase()).join ' '
 # => 'Foo Bar Baz'
 {% endhighlight %}
 
-Or do the same thing using a list comprehension:
+或者，通过列表解析来实现：
 
 {% highlight coffeescript %}
 (word[0].toUpperCase() + word[1..-1].toLowerCase() for word in "foo   bar   baz".split /\s+/).join ' '
 # => 'Foo Bar Baz'
 {% endhighlight %}
 
-## Discussion
+## 详细
 
 Split, map, join is a common scripting pattern dating back to perl. This function may benefit from being placed directly onto the String class by [Extending Classes](/chapters/objects/extending-classes).
 

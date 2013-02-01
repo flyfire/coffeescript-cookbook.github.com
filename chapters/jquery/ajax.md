@@ -42,4 +42,4 @@ jQuery 1.5 及更高的版本补充了一个新的API，用于处理不同的回
 
 ## 详解
 
-jQuery和 $ 这两个变量可以交换使用。参看 [回调绑定](/coffeescript-cookbook.github.com/chapters/jquery/callback-bindings-jquery).
+jQuery和 $ 这两个变量可以交换使用。参看 [回调绑定](/coffeescript-cookbook.github.com/chapters/jquery/callback-bindings-jquery)。
