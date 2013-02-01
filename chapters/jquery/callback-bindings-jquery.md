@@ -1,13 +1,13 @@
 ---
 layout: recipe
-title: Callback Bindings # using => instead of ->
+title: 回调绑定 # using => instead of ->
 chapter: jQuery
 ---
-## Problem
+## 问题
 
-You want to bind a callback function to an object.
+你想给一个对象绑定回调事件。
 
-## Solution
+## 方法
 
 {% highlight coffeescript %}
 $ ->
@@ -25,7 +25,6 @@ $ ->
   new Basket()
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-By using the fat arrow (`=>`) instead of the normal arrow (`->`) the function gets
-automatically bound to the object and can access the `@-variable`.
+通过使用胖箭头 (`=>`) 取代单箭头 (`->`), 回调函数会：自动获取上下文中的对象并进行绑定。
