@@ -1,19 +1,17 @@
 ---
 layout:   recipe
-title:    String Interpolation
+title:   字符串插值 
 chapter:  Strings
 ---
-## Problem
+## 问题
 
-You want to create a string that contains a text representation of a
-CoffeeScript Variable.
+你想创建一个字符串，包含字符串，可以代表一个CoffeeScript变量。
 
-## Solution
+## 方法
 
-Use CoffeeScript's ruby-like string interpolation instead of
-JavaScript's string addition.
+使用CoffeeScript类似Ruby的字符插值法，来替代JavaScript字符串拼接。
 
-Interpolation:
+字符串插值：
 
 {% highlight coffeescript %}
 muppet = "Beeker"
@@ -29,14 +27,11 @@ message = "The square of 7 is #{square 7}."
 # => "The square of 7 is 49."
 {% endhighlight %}
 
-## Discussion
+## 讨论
 
-CoffeeScript interpolates strings in similar fashion to ruby. Most
-expressions are valid inside the `#{...}` interpolation syntax.
+CoffeeScript的字符串插值与Ruby的惯用法相似。绝大多数的表达式都可以放到插值语法`#{...}`中。
 
-CoffeeScript permits multiple expressions inside the interpolation
-which can have side effects, but this is discouraged. Only the last
-value will be returned.
+CoffeeScript允许在插值中使用多个表达式，这可能会有副作用，有时候是危险的信号。只有最后一个值会被返回。
 
 {% highlight coffeescript %}
 # You can do this, but don't. YOU WILL GO MAD.

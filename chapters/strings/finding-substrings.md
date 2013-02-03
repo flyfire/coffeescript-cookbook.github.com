@@ -1,16 +1,17 @@
 ---
 layout: recipe
-title: Finding Substrings
+title: 查找子字符串
 chapter: Strings
 ---
-## Problem
+## 问题
 
-You need to find the first or last occurrence of a search string within a message.
+在一个消息中搜索字，获取第一次出现或者最后一次出现的子字符串。
 
-## Solution
+## 方法
 
-Use Javascript's indexOf() and lastIndexOf() to find the first and last occurrences of a string, respectively.
-Syntax: string.indexOf searchstring, start
+可以分别使用JavaScript的indexOf()和lastIndexOf()方法来查找第一个或者最后一个出现的字符串。
+
+语法：string.indexOf searchstring, start
 
 {% highlight coffeescript %}
 message = "This is a test string. This has a repeat or two. This might even have a third."
@@ -26,6 +27,6 @@ message.lastIndexOf "This"
 
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-Still need recipe to count occurrences of a given string within a message.
+还需要梁歪的技巧来计算字符串在一个消息中出现的次数。

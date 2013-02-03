@@ -23,17 +23,17 @@ chapter: Strings
 # => 'Foo Bar Baz'
 {% endhighlight %}
 
-## 详细
+## 详解
 
-Split, map, join is a common scripting pattern dating back to perl. This function may benefit from being placed directly onto the String class by [Extending Classes](/chapters/objects/extending-classes).
+Split，map和join是一种常用的脚本模式，可追溯到perl语言。使用[扩展类](/chapters/objects/extending-classes)把这些函数直接放到String类中会更好。
 
-Be aware that two wrinkles can appear in the split, map, join pattern. The first is that the split text works best when it is constant. If the source string has multiple spaces in it, the split will need to take this into account to prevent getting extra, empty words. One way to do this is with a regular expression to split on runs of whitespace instead of a single space:
+Split，map和join模式也有两点不足之处需要注意。一是，如果被分割的字符串比较固定的话split没什么问题，不过不过源字符串中包含多个空格，使用split方法就需要考虑进去，以免混入多余的空单词。使用正则表达式代替单个空格来对连续空格进行切分是一种方法：
 
 {% highlight coffeescript %}
 ("foo    bar    baz".split(/\s+/).map (word) -> word[0].toUpperCase() + word[1..-1].toLowerCase()).join ' '
 # => 'Foo Bar Baz'
 {% endhighlight %}
 
-...but this leads us to the second wrinkle: notice that the runs of whitespace are now compressed down to a single character by the join.
+……但是这会把我们导向另一个瑕疵：注意，join后，连续的空格现在被精简成了单个空格。
 
-Quite often one or both of these wrinkles is acceptable, however, so the split, map, join pattern can be a powerful tool.
+然而，通常这两个瑕疵或多或少是可以接受的，因此，slipt，map和join模式是非常有用的工具。
