@@ -1,15 +1,15 @@
 ---
 layout:   recipe
-title:    Matching Strings
+title:    字符串匹配
 chapter:  Strings
 ---
-## Problem
+## 问题
 
-You want to match two or more strings.
+你想对两个或多个字符串进行匹配。
 
-## Solution
+## 方法
 
-Calculate the edit distance, or number of operations required to transform one string into the other.
+计算编辑距离，即计算把某个字符串转为另外一个字符串需要操作的次数。
 
 {% highlight coffeescript %}
 
@@ -40,6 +40,6 @@ Levenshtein =
     
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-You can use either Hirschberg or Wagner–Fischer's algorithm to calculate a Levenshtein distance. This example uses Wagner–Fischer's algorithm.
+你可以使用Hirschberg或者Wagner-Fischer的算法来计算编辑距离。上例使用的是Wagner-Fischer算法。

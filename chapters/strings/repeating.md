@@ -1,15 +1,15 @@
 ---
 layout: recipe
-title: Repeating a String
+title: 重复字符串
 chapter: Strings
 ---
-## Problem
+## 问题
 
-You want to repeat a string.
+你想重复一个字符串。
 
-## Solution
+## 方法
 
-Create an array of n+1 nulls, and then join it with the repetition string as the glue:
+创建一个一个数组，包含n+1个null，然后把待重复的字符串作为胶水，将它们粘在一起：
 
 {% highlight coffeescript %}
 # create a string of 10 foos
@@ -18,6 +18,6 @@ Array(11).join 'foo'
 # => "foofoofoofoofoofoofoofoofoofoo"
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-JavaScript lacks a string repeat function, as does CoffeeScript. List comprehensions and maps can be pressed into service here, but in the case of a simple string repeat it's easier to simply build an array of n+1 nulls and then glue them together.
+JavaScript缺少一个字符串重复的函数，CoffeeScript也一样。凑活下，这里也可以使用列表解析和映射map。但是像这种简单的重复字符串的需求，创建一个n+1个null的数组，然后把它们粘在一起更简单。

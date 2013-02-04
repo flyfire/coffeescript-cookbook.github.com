@@ -32,8 +32,6 @@ String::downcase = -> @toLowerCase()
 
 上面的这一小段代码，展示出了几个CoffeeScript的特性：
 
-* The double-colon `::` is shorthand for saying `.prototype.`
-* The "at" sign `@` is shorthand for saying `this.`
 * 双冒号`::`是`.prototype`的缩写；
 * `@`是`this.`的缩写。
 

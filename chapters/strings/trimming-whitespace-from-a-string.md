@@ -1,40 +1,40 @@
 ---
 layout: recipe
-title: Trimming Whitespace from a String
+title: 去掉字符串首尾的空白
 chapter: Strings
 ---
-## Problem
+## 问题
 
-You want to trim whitespace from a string.
+你想去掉字符串首尾的空白
 
-## Solution
+## 方法
 
-Use JavaScript's Regular Expression support to replace whitespace.
+使用JavaScript的正则表达式来替换空白。
 
-To trim leading and trailing whitespace, use the following:
+使用下面的方式去掉首尾的空白字符：
 
 {% highlight coffeescript %}
 "  padded string  ".replace /^\s+|\s+$/g, ""
 # => 'padded string'
 {% endhighlight %}
 
-To trim only leading whitespace, use the following:
+如下方式，仅仅去掉首部的空白符：
 
 {% highlight coffeescript %}
 "  padded string  ".replace /^\s+/g, ""
 # => 'padded string  '
 {% endhighlight %}
 
-To trim only trailing whitespace, use the following:
+去掉末尾的空白字符：
 
 {% highlight coffeescript %}
 "  padded string  ".replace /\s+$/g, ""
 # => '  padded string'
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-Opera, Firefox and Chrome all have a native string prototype `trim` method, and the other browsers could add one as well. For this particular method, I would use the built-in method where possible, otherwise create a polyfill:
+Opera，Firefox和Chrome都有一个原生的字符串原型方法`trim`，而且也可以为其他浏览器其添加同样的方法。对于这类方法，如果存在的话我就使用内置的，否则就自己补充一个：
 
 {% highlight coffeescript %}
 unless String::trim then String::trim = -> @replace /^\s+|\s+$/g, ""
@@ -44,9 +44,9 @@ unless String::trim then String::trim = -> @replace /^\s+|\s+$/g, ""
 {% endhighlight %}
 
 
-### Syntax Sugar
+### 语法糖
 
-You can add some Ruby-like syntax sugar with the following shortcuts:
+你可以使用下面这种快捷方法添加一些类似于Ruby的语法糖：
 
 {% highlight coffeescript %}
 String::strip = -> if String::trim? then @trim() else @replace /^\s+|\s+$/g, ""
@@ -61,4 +61,4 @@ String::rstrip = -> @replace /\s+$/g, ""
 # => '  padded string'
 {% endhighlight %}
 
-For an interesting discussion and benchmarks of JavaScript `trim` performance, see [this blog post](http://blog.stevenlevithan.com/archives/faster-trim-javascript) by Steve Levithan.
+关于`trim`性能的讨论和数据，参看Steve Levithan的[这篇博客](http://blog.stevenlevithan.com/archives/faster-trim-javascript)。

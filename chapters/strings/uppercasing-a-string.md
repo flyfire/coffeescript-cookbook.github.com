@@ -1,28 +1,28 @@
 ---
 layout: recipe
-title: Uppercasing a String
+title: 大写整个字符
 chapter: Strings
 ---
-## Problem
+## 问题
 
-You want to uppercase a string.
+你想大写整个字符串。
 
-## Solution
+## 方法
 
-Use JavaScript's String toUpperCase() method:
+使用JavaScript String的toUpperCase()方法：
 
 {% highlight coffeescript %}
 "one two three".toUpperCase()
 # => 'ONE TWO THREE'
 {% endhighlight %}
 
-## Discussion
+##　详解
 
-`toUpperCase()` is a standard JavaScript method. Don't forget the parentheses.
+`toUpperCase()`是一个标准的JavaScript方法。 别忘了括号。
 
-### Syntax Sugar
+### 语法糖
 
-You can add some Ruby-like syntax sugar with the following shortcut:
+你可以使用下面这种便捷方法添加一些与Ruby相似的语法糖。
 
 {% highlight coffeescript %}
 String::upcase = -> @toUpperCase()
@@ -30,12 +30,13 @@ String::upcase = -> @toUpperCase()
 # => 'ONE TWO THREE'
 {% endhighlight %}
 
-The snippet above demonstrates a few features of CoffeeScript:
+上面的代码片段展示了CoffeeScript的数个特性：
 
-* The double-colon `::` is shorthand for saying `.prototype.`
-* The "at" sign `@` is shorthand for saying `this.`
+* 双冒号::是.prototype的缩写；
+* @是this.的缩写。
 
-The code above compiles in to the following JavaScript:
+
+上面的代码会被编译为如下的JavaScript代码：
 
 {% highlight javascript %}
 String.prototype.upcase = function() {
@@ -44,4 +45,4 @@ String.prototype.upcase = function() {
 "one two three".upcase();
 {% endhighlight %}
 
-**Note:** Although it's quite common in languages like Ruby, extending native objects is often considered bad practice in JavaScript (see: [Maintainable JavaScript: Don’t modify objects you don’t own](http://www.nczonline.net/blog/2010/03/02/maintainable-javascript-dont-modify-objects-you-down-own/); [Extending built-in native objects. Evil or not?](http://perfectionkills.com/extending-built-in-native-objects-evil-or-not/)).
+**注意：**尽管在像Ruby这样的语言中扩展原生的对象很常见，但是在JavaScript中这被认为是不好的实践（参看：[Maintainable JavaScript: Don’t modify objects you don’t own](http://www.nczonline.net/blog/2010/03/02/maintainable-javascript-dont-modify-objects-you-down-own/)；[Extending built-in native objects. Evil or not?](http://perfectionkills.com/extending-built-in-native-objects-evil-or-not/)）。

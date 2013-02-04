@@ -1,15 +1,15 @@
 ---
 layout: recipe
-title: Splitting a String
+title: 分割字符串
 chapter: Strings
 ---
-## Problem
+## 问题
 
-You want to split a string.
+你想分割一个字符串。
 
-## Solution
+## 方法
 
-Use JavaScript's String split() method:
+使用JavaScript的split()方法：
 
 {% highlight coffeescript %}
 "foo bar baz".split " "
@@ -17,8 +17,9 @@ Use JavaScript's String split() method:
 {% endhighlight %}
 
 ## Discussion
+## 详解
 
-String's split() is a standard JavaScript method. It can be used to split a string on any delimiter, including regular expressions. It also accepts a second parameter that specifies the number of splits to return.
+String的split()是一个标准的JavaScript方法。它可以使用任意的分割符来切割字符串，甚至可以使用正则表达式。它还能接受第二个参数，指明需要返回的切片个数。
 
 {% highlight coffeescript %}
 "foo-bar-baz".split "-"
