@@ -32,8 +32,8 @@ String::upcase = -> @toUpperCase()
 
 上面的代码片段展示了CoffeeScript的数个特性：
 
-* 双冒号::是.prototype的缩写；
-* @是this.的缩写。
+* 双冒号`::`是`.prototype`的缩写；
+* `@`是`this.`的缩写。
 
 
 上面的代码会被编译为如下的JavaScript代码：
