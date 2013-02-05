@@ -9,7 +9,7 @@ chapter: Arrays
 
 {% highlight coffeescript %}
 myArray = []
-console.log typeof myArray // 输出 'object'
+console.log typeof myArray // output 'object'
 {% endhighlight %}
 
 `typeof`方法对数组对象提供了一个不友好的输出。
@@ -26,7 +26,7 @@ typeIsArray = Array.isArray || ( value ) -> return {}.toString.call( value ) is 
 
 {% highlight coffeescript %}
 myArray = []
-typeIsArray myArray // 输出 true
+typeIsArray myArray // output true
 {% endhighlight %}
 
 ## 讨论
