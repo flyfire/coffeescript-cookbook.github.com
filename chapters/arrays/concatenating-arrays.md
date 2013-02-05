@@ -1,17 +1,17 @@
 ---
 layout: recipe
-title: Concatenating Arrays
+title: 连接数组
 chapter: Arrays
 ---
-## Problem
+## 问题
 
-You want to join two arrays together.
+你想要将两个数据连接到一起。
 
-## Solution
+## 方法
 
-There are two standard options for concatenating arrays in JavaScript.
+在JavaScript中，有两个连接数组的标准选项。
 
-The first is to use JavaScript's Array `concat()` method:
+第一个是使用JavaScript中Array的`concat()`方法：
 
 {% highlight coffeescript %}
 array1 = [1, 2, 3]
@@ -20,9 +20,9 @@ array3 = array1.concat array2
 # => [1, 2, 3, 4, 5, 6]
 {% endhighlight %}
 
-Note that `array1` is _not_ modified by the operation. The concatenated array is returned as a new object.
+需要注意的是`array1`在操作中没有被修改。串接的数组返回一个新的对象。
 
-If you want to merge two arrays without creating a new object, you can use the following technique:
+如果你希望合并两个数组而不创建新对象，你可以使用以下技巧：
 
 {% highlight coffeescript %}
 array1 = [1, 2, 3]
@@ -32,9 +32,9 @@ array1
 # => [1, 2, 3, 4, 5, 6]
 {% endhighlight %}
 
-In the example above, the `Array.prototype.push.apply(a, b)` approach modifies `array1` in place without creating a new array object.
+在上面的例子中，`Array.prototype.push.apply(a, b)`方法修改`array1`对象，而无需创建一个新数组对象。
 
-We can simplify the pattern above using CoffeeScript by creating a new `merge()` method for Arrays.
+我们可以简化上面的模式，使用CoffeeScript通过创建一个新的`merge()`对数组的方法。
 
 {% highlight coffeescript %}
 Array::merge = (other) -> Array::push.apply @, other
@@ -46,16 +46,16 @@ array1
 # => [1, 2, 3, 4, 5, 6]
 {% endhighlight %}
 
-Alternatively, we can pass a CoffeeScript splat (`array2...`) directly into `push()`, avoiding the Array prototype.
+或者，我们可以通过CoffeeScript图示(`array2...`)直接使用`push()`，避免Array原型。
 
 {% highlight coffeescript %}
 array1 = [1, 2, 3]
 array2 = [4, 5, 6]
 array1.push array2...
 array1
-# => [1, 2, 3, 4, 5, 6]
+# => [1, 2, 3, 4, 5, 6]97
 {% endhighlight %}
 
-## Discussion
+## 讨论
 
-CoffeeScript lacks a special syntax for joining arrays, but `concat()` and `push()` are standard JavaScript methods.
+CoffeeScript缺乏一种特定的语法来加入数组，但`concat()`和`push()`是标准的JavaScript方法。

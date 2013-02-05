@@ -5,7 +5,7 @@ chapter: Arrays
 ---
 ## 问题
 
-你想要检查一个对象是否为“Array”。
+你想要检查一个对象是否为`Array`。
 
 {% highlight coffeescript %}
 myArray = []
@@ -22,7 +22,7 @@ console.log typeof myArray // 输出 'object'
 typeIsArray = Array.isArray || ( value ) -> return {}.toString.call( value ) is '[object Array]'
 {% endhighlight %}
 
-使用它只需要像这样调用“typeIsArray”：
+使用它只需要像这样调用`typeIsArray`：
 
 {% highlight coffeescript %}
 myArray = []

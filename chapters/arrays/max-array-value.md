@@ -3,20 +3,20 @@ layout: recipe
 title: Max Array Value
 chapter: Arrays
 ---
-## Problem
+## 问题
 
-You need to find the largest value contained in an array.
+你需要找到包含在数组中的最大值。
 
-## Solution
+## 方法
 
-You can use Math.max() JavaScript method along with splats.
+你可以使用JavaScript的Math.max()方法与图示。
 
 {% highlight coffeescript %}
 Math.max [12, 32, 11, 67, 1, 3]...
 # => 67
 {% endhighlight %}
 
-Alternatively, it's possible to use ES5 `reduce` method. For backward compatibility with older JavaScript implementations, use Math.max.apply:
+或者，也可以使用ES5的`reduce`方法。为了向后兼容旧的JavaScript实现，使用Math.max.apply：
 
 {% highlight coffeescript %}
 # ECMAScript 5
@@ -28,6 +28,6 @@ Math.max.apply(null, [12,32,11,67,1,3])
 # => 67
 {% endhighlight %}
 
-## Discussion
+## 讨论
 
-`Math.max` compares every argument and returns the largest number from arguments. The ellipsis (`...`) converts every array value into argument which is given to the function. You can also use it with other functions which take variable ammount of arguments, such as `console.log`.
+`Math.max`比较每一个参数并返回参数中的最大值。省略号(`...`)转变每一个数组值为传入function的参数。您还可以使用它与其他接收可变参数数量的方法，例如`console.log`
