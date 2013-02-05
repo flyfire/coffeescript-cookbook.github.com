@@ -1,37 +1,37 @@
 ---
 layout: recipe
-title: Check if type of value is an Array
+title: 数组检查
 chapter: Arrays
 ---
-## Problem
+## 问题
 
-You want to check if a value is an `Array`.
+你想检查某个值的类型是否为`Array`。
 
 {% highlight coffeescript %}
 myArray = []
 console.log typeof myArray // outputs 'object'
 {% endhighlight %}
 
-The `typeof` operator gives a faulty output for arrays.
+`typeof`用在数组上时，输出的结果是错误的。
 
-## Solution
+## 方法
 
-Use the following code:
+使用如下的代码：
 
 {% highlight coffeescript %}
 typeIsArray = Array.isArray || ( value ) -> return {}.toString.call( value ) is '[object Array]'
 {% endhighlight %}
 
-To use this, just call `typeIsArray` as such:
+如下调用`typeIsArray`就行：
 
 {% highlight coffeescript %}
 myArray = []
 typeIsArray myArray // outputs true
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-The method above has been adopted from "the Miller Device". An alternative is to use Douglas Crockford's snippet:
+上面的方法摘自“the Miller Device”。还可以使用Douglas Crockford的这段代码：
 
 {% highlight coffeescript %}
 typeIsArray = ( value ) ->
