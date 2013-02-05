@@ -1,6 +1,6 @@
 ---
 layout: recipe
-title: Max Array Value
+title: 数组最大值
 chapter: Arrays
 ---
 ## 问题

@@ -12,7 +12,7 @@ myArray = []
 console.log typeof myArray // 输出 'object'
 {% endhighlight %}
 
-“typeof”方法对数组对象提供了一个不友好的输出。
+`typeof`方法对数组对象提供了一个不友好的输出。
 
 ## 方法
 
