@@ -1,6 +1,6 @@
 ---
 layout: recipe
-title: 数组检查
+title: 检查值的类型是否是数组
 chapter: Arrays
 ---
 ## 问题
