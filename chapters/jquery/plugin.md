@@ -1,13 +1,13 @@
 ---
 layout: recipe
-title: Create a jQuery Plugin
+title: 创建jQuery插件
 chapter: jQuery
 ---
-## Problem
+## 问题
 
-You'd like to create jQuery plugin using CoffeeScript
+你想使用CoffeeScript来创建jQuery插件。
 
-## Solution
+## 方法
 
 {% highlight coffeescript %}
 # Reference jQuery
@@ -37,11 +37,11 @@ $.fn.extend
       log "Option 1 value: #{settings.option1}"
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-Here are a couple of examples of how to use your new plugin.
+下面是两个使用这个新插件的例子。
 
-### JavaScript
+### JavaScript：
 
 {% highlight javascript %}
 $("body").pluginName({
@@ -50,7 +50,7 @@ $("body").pluginName({
 
 {% endhighlight %}
 
-### CoffeeScript:
+### CoffeeScript：
 
 {% highlight coffeescript %}
 $("body").pluginName
