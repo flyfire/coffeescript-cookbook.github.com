@@ -1,15 +1,15 @@
 ---
 layout: recipe
-title: Command Pattern
+title: 命令模式
 chapter: Design Patterns
 ---
-## Problem
+## 问题
 
-You need to let another object handle when your private code is executed.
+当你自己的代码运行时，你需要使用其他另外的对象来处理。
 
-## Solution
+## 方法
 
-Use the [Command pattern](http://en.wikipedia.org/wiki/Command_pattern) to pass along references to your functions.
+使用[命令模式](http://en.wikipedia.org/wiki/Command_pattern)把引用传递给你的函数。
 
 {% highlight coffeescript %}
 # Using a private variable to simulate external scripts or modules
@@ -37,11 +37,11 @@ runner.run()
 incrementers.value() # => 6
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-With functions as first-class objects and with the function-bound variable scope inherited from Javascript, the CoffeeScript language makes the pattern nearly invisible.  In fact, any function passed along as callbacks can act as a *Command*.
+承袭自JavaScript，由于函数是第一类对象，且函数与变量作用域绑定的关系，CoffeeScript让这个模式几乎不可见。事实上，所有把函数作为一个回调传递时都可以看作是一个*命令*。
 
-The `jqXHR` object returned by jQuery AJAX methods uses this pattern.
+jQuery AJAX方法返回的 `jqXHR`对象使用的就是这种模式。
 
 {% highlight coffeescript %}
 jqxhr = $.ajax
@@ -56,4 +56,3 @@ jqxhr.complete -> logMessages += "Completed!\n"
 # On a valid AJAX request:
 # logMessages == "Success!\nCompleted!\n"
 {% endhighlight %}
-

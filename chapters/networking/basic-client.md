@@ -1,17 +1,17 @@
 ---
 layout: recipe
-title: Basic Client
+title: 简单的客户端
 chapter: Networking
 ---
-## Problem
+## 问题
 
-You want to access a service provided over the network.
+你想访问一个网络客户端。
 
-## Solution
+## 方法
 
-Create a basic TCP client.
+创建一个简单的TCP客户端。
 
-### In Node.js
+### 使用Node.js
 
 {% highlight coffeescript %}
 net = require 'net'
@@ -29,9 +29,9 @@ connection.on 'data', (data) ->
 	connection.end()
 {% endhighlight %}
 
-### Example Usage
+### 用法示例
 
-Accessing the [Basic Server](/chapters/networking/basic-server):
+访问这个[简单的客户端](/chapters/networking/basic-server)：
 
 {% highlight console %}
 $ coffee basic-client.coffee
@@ -39,12 +39,13 @@ Opened connection to localhost:9001
 Received: Hello, World!
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-The most important work takes place in the _connection.on 'data'_ handler, where the client receives its response from the server and would most likely arrange for responses to it.
+_connection.on 'data'_处理器中包含了最关键的地方，客户端从服务端接受数据，也许还需要安排返回的数据。
 
-See also the [Basic Server](/chapters/networking/basic-server), [Bi-Directional Client](/chapters/networking/bi-directional-client), and [Bi-Directional Server](/chapters/networking/bi-directional-server) recipes.
+参看[简单的服务器]、[Bi-Directional Client](/chapters/networking/bi-directional-client)和[Bi-Directional Server](/chapters/networking/bi-directional-server)。
 
-### Exercises
+### 练习
 
-* Add support for choosing the target domain and port based on command-line arguments or from a configuration file.
+* 支持domian和端口的自定义，从命令行接受参数，或者从一个配置文件。
+

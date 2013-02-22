@@ -1,17 +1,17 @@
 ---
 layout: recipe
-title: Testing with Jasmine
+title: 使用Jasmine测试
 chapter: Testing
 ---
-## Problem
+## 问题
 
-You are writing a simple calculator using CoffeeScript and you want to verify it functions as expected.  You decide to use the <a href="http://pivotal.github.com/jasmine/" target="_blank">Jasmine</a> test framework.
+你使用CoffeeeScript写了一个简单的计算器，然后你想确认一下它的函数是否如你所想。你决定使用[Jasmine](http://pivotal.github.com/jasmine/)测试框架。
 
-## Discussion
+## 详解
 
-When using the Jasmine test framework, you write tests in a specification (spec) file that describes the expected functionality of the code to be tested.
+使用Jasmine测试框架，把测试写在一个特殊的文件（spec）中，测试中描述了被测代码所期望的功能点。
 
-For example, we expect our calculator will be able to add and subtract and will function correctly with both positive and negative numbers.  Our spec is listed below.
+例如，我们希望我们的计算机可以做加减法，并且能够正确地处理正负数。我们的测试用例如下。
 
 {% highlight coffeescript %}
 
@@ -42,17 +42,18 @@ describe 'Calculator', ->
 {% endhighlight %}
 
 
-### Configuring Jasmine
+### 配置Jasmine
 
-Before you can run your tests, you must download and configure Jasmine.  This involves:
-1. downloading the latest <a href="http://pivotal.github.com/jasmine/download.html" target="_blank">Jasmine</a> zip file;
-2. creating a spec and a spec/jasmine folder in your project;
-3. extracting the downloaded Jasmine files into the spec/jasmine folder; and
-4. creating a test runner.
+想要运行你的测试用例，你必须下载Jasmine，并对其进行配置，具体步骤如下：
 
-### Create a Test Runner
+1. 下载最新的[Jasmine](http://pivotal.github.com/jasmine/download.html) zip文件；
+2. 在你的项目中创建两个文件夹，spec和spec/jasmine；
+3. 把下载好的Jasmine文件解压到spec/jasmine文件夹中；
+4. 创建一个测试的runner。
 
-Jasmine can run your tests within a web browser by using a spec runner HTML file.  The spec runner is a simple HTML page that links the necessary JavaScript and CSS files for both Jasmine and your code.  A sample is below.
+### 创建Test Runner
+
+Jasmine能够通过一个spec runner HTML文件在浏览器中运行你的测试用例。spec runner是一个简单的HTML页面，引用了一些必要的JavaScript和CSS文件，包括Jasmine和你的代码。示例如下。
 
 {% highlight html linenos %}
 
@@ -110,20 +111,19 @@ Jasmine can run your tests within a web browser by using a spec runner HTML file
 
 {% endhighlight %}
 
-This spec runner can be downloaded from this GitHub <a href="https://gist.github.com/2623232" target="_blank">gist</a>.
+可以从[gist](https://gist.github.com/2623232)上下载这个spec runner。
 
-To use the SpecRunner.html, simply reference your compiled JavaScript files and compiled tests after jasmine.js and its dependencies.
+SpecRunner.html使用起来也很简单，引入jasmine.js和相关的依赖，然后接着引入编译好的JavaScript文件和测试用例即可。
 
-In the above example, we include our yet-to-be-developed calculator.js file on line 14 and our compiled calculatorSpec.js file on line 17.
+在上例中，我们引入了有待开发的calculator.js文件（14行）以及编译好的calculatorSpec.js文件（17行）。
 
-## <span style="color: red;">Running the Tests</span>
+## 运行测试用例
 
-To run our tests, simply open SpecRunner.html in a web browser.  In our example we see 4 failing specs with a total of 8 failures (below).
+只需在浏览器中打开SpecRunner.js就能运行我们的测试用例。在我们的例子中，我们会看到4个失败的spec，总共包含8个没有通过的测试用例（如下）。
 
 <img src="images/jasmine_failing_all.jpg" alt="All failing tests" />
 
-It appears our tests are failing because Jasmine cannot find the variable Calculator.  That's because it has not been created yet.  Let's do that now by creating a new file named js/calculator.coffee.
-
+看起来我们的测试用例没有通过是因为Jasmine无法找到Calculator变量。因为它就没被创建出来过。我们现在来创建，我们创建一个名为js/calculator.coffee的文件。
 
 {% highlight coffeescript %}
 
@@ -133,15 +133,15 @@ window.Calculator = class Calculator
 
 {% endhighlight %}
 
-Compile calculator.coffee and refresh the browser to re-run the test suite.
+编译calculator.coffee，然后刷新浏览器，重新运行测试用例。
 
 <img src="images/jasmine_failing_better.jpg" alt="Still failing, but better" />
 
-We now have 4 failures instead of our previous 8.  That's a 50% improvement with only one line of code.
+现在，未通过的测试用例从原来的8个变成了现在的4个。只增加了一行代码，就有50%的提升。
 
-## <span style="color: green;">Getting the Tests to Pass</span>
+## 让测试都通过
 
-Let's implement our methods and see if we can get these tests to pass.
+让我们把方法都实现出来，看看这些测试用例能够通过么？
 
 {% highlight coffeescript %}
 
@@ -156,18 +156,18 @@ window.Calculator = class Calculator
 
 {% endhighlight %}
 
-When we refresh we see they all pass.
+刷新后，我们看到所有的测试用例都通过了。
 
 <img src="images/jasmine_passing.jpg" alt="All passing" />
 
 
-## <span style="color: green;">Refactoring the Tests</span>
+## 重构测试用例
 
-Now that our tests pass, we should look to see if our code or our test(s) can be refactored.
+现在我们的测试通过了，我们应该检查一下我们的代码或者测试用例是否可以重构一下。
 
-In our spec file, each test creates its own calculator instance.  This can make our tests quite repetitive especially for larger test suites.  Ideally, we should consider moving that initialization code into a routine that runs before each test.  
+在我们的spec文件中，每个测试用例都会创建它自己的calculator实例。这会让我们的测试用例过于重复，对于较大的测试用例尤其如此。理想情况下，我们应当考虑把那些初始化的代码移进每个测试运行之前都需例行运行的代码中。
 
-Luckily Jasmine has a beforeEach function just for this purpose.
+恰好Jasmine有一个名为beforeEach的函数可以实现这种需求。
 
 {% highlight coffeescript %}
 
@@ -195,6 +195,7 @@ describe 'Calculator', ->
 
 {% endhighlight %}
 
-When we recompile our spec and refresh the browser we see the tests still all pass.
+当我们重新编译我们的spec刷新浏览器之后，测试还是都通过了。
 
 <img src="images/jasmine_passing.jpg" alt="All passing" />
+

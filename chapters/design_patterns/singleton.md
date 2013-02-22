@@ -1,19 +1,19 @@
 ---
 layout: recipe
-title: Singleton Pattern
+title: 单例模式
 chapter: Design Patterns
 ---
-## Problem
+## 问题
 
-Many times you only want one, and only one, instance of a class. For example, you may only need one class that creates server resources and you want to ensure that the one object can control those resources. Beware, however, because the singleton pattern can be easily abused to mimic unwanted global variables.
+很多时候你需要一个仅且一个类的实例。例如，你也许只需要一个类实例，这个类创建服务端资源，并且你想保证只有一个对象可以控制这些资源。然而，要注意单例模式很容易引入不必要的全局变量。
 
-## Solution
+## 方法
 
-The publicly available class only contains the method to get the one true instance. The instance is kept within the closure of that public object and is always returned.
+公共可用的类只包含一个方法，使用该方法获取那个唯一的实例。这个实例被保存在这个公共对象的毕包中，并且每次返回的都是这个对象。
 
-The actual definition of the singleton class follows.
+单例类的真实定义跟在后面。
 
-Note that I am using the idiomatic module export feature to emphasize the publicly accessible portion of the module. Remember coffeescript wraps all files in a function block to protect the global namespace.
+注意，我使用了惯用的模块暴露的特性，来强调这个模块公共可访问的部分。别忘了CoffeeScript会把所有的文件内容包含在一个函数块中，以此保护全局作用域不被污染。
 
 {% highlight coffeescript %}
 root = exports ? this # http://stackoverflow.com/questions/4214731/coffeescript-global-variables
@@ -58,8 +58,8 @@ a.foo()
 # => 'Hello A'
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-See in the above example how all instances are outputting from the same instance of the Singleton class.
+在上例中，可以看出，所有的实例如此从同一个单例类的实例中输出的。
 
-Note how incredibly simple coffeescript makes this design pattern. For reference and discussion on nice javascript implementations, check out [Essential JavaScript Design Patterns For Beginners](http://addyosmani.com/resources/essentialjsdesignpatterns/book/).
+看看CoffeeScript是如何让这个设计模式变得如此简单的，对应JavaScript实现的参考和讨论，请参看[Essential JavaScript Design Patterns For Beginners](http://addyosmani.com/resources/essentialjsdesignpatterns/book/).

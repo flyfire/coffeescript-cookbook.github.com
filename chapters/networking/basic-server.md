@@ -1,17 +1,17 @@
 ---
 layout: recipe
-title: Basic Server
+title: 简单的服务器
 chapter: Networking
 ---
-## Problem
+## 问题
 
-You want to provide a service over a network.
+你想要提供一个网络服务。
 
-## Solution
+## 方法
 
-Create a basic TCP server.
+创建一个简单的TCP服务器。
 
-### In Node.js
+### 使用Node.js
 
 {% highlight coffeescript %}
 net = require 'net'
@@ -29,6 +29,7 @@ server.listen port, domain
 {% endhighlight %}
 
 ### Example Usage
+### 使用示例
 
 Accessed by the [Basic Client](/chapters/networking/basic-client):
 
@@ -40,12 +41,14 @@ Received connection from 127.0.0.1
 [...]
 {% endhighlight %}
 
-## Discussion
+## 详解
 
 The function passed to @net.createServer@ receives the new socket provided for each new connection to a client.  This basic server simply socializes with its visitors but a hard-working server would pass this socket along to a dedicated handler and then return to the task of waiting for the next client.
 
 See also the [Basic Client](/chapters/networking/basic-client), [Bi-Directional Server](/chapters/networking/bi-directional-server), and [Bi-Directional Client](/chapters/networking/bi-directional-client) recipes.
 
 ### Exercises
+### 练习
 
 * Add support for choosing the target domain and port based on command-line arguments or from a configuration file.
+

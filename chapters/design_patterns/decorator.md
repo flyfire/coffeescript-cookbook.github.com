@@ -1,15 +1,15 @@
 ---
 layout: recipe
-title: Decorator Pattern
+title: 装饰者模式
 chapter: Design Patterns
 ---
-## Problem
+## 问题
 
-You have a set of data that you need to process in multiple, possibly varying ways.
+你有一组数据，你需要对它们进行多次不同可处理。
 
-## Solution
+## 方法
 
-Use the Decorator pattern in order to structure how you apply the changes.
+使用装饰者模式来构建你的处理方式。
 
 {% highlight coffeescript %}
 miniMarkdown = (line) ->
@@ -52,7 +52,7 @@ processor.processString exampleText
 # => "<h1>A level 1 header</h1>\n<p>A regular line</p>\n\n<h2>A level 2 header</h2>\n<p>A line</p>"
 {% endhighlight %}
 
-### Results
+### 结果
 
 {% highlight html %}
 <h1>A level 1 header</h1>
@@ -62,11 +62,11 @@ processor.processString exampleText
 <p>A line</p>
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-The TextProcessor serves the role of Decorator by binding the individual, specialized text processors together.  This frees up the miniMarkdown and stripComments components to focus on handling nothing but a single line of text.  Future developers only have to write functions that return a string and add it to the array of processors.
+TextProcessor正在这里就是一个装饰者的角色，把独立的不同的文本处理方式放到了一起。miniMarkdown和stripComments这两个组件被解放出来，专注于处理单行文本。其他开发者只需要编写这样的函数，返回一个字符串，并且把这个函数添加到处理器组中。
 
-We can even modify the existing Decorator object on the fly:
+我们甚至可以随时修改现有的装饰者：
 
 {% highlight coffeescript %}
 smilies =
@@ -90,3 +90,4 @@ processor.processors.shift()
 
 # => "<h1>A header that makes you :)</h1>"
 {% endhighlight %}
+

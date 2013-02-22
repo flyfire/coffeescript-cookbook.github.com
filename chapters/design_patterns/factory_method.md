@@ -1,17 +1,17 @@
 ---
 layout: recipe
-title: Factory Method Pattern
+title: 工厂方法模式
 chapter: Design Patterns
 ---
-## Problem
+## 问题
 
-You don't know what kind of object you will need until runtime.
+只到运行时，你才知道你需要什么样的对象。
 
-## Solution
+## 方法
 
-Use the [Factory Method](http://en.wikipedia.org/wiki/Factory_method_pattern) pattern and choose the object to be generated dynamically.
+使用[工厂方法模式](http://en.wikipedia.org/wiki/Factory_method_pattern)，动态地选择要生成的对象。
 
-Say that you need to load a file into an editor but you don't know its format until the user chooses the file.  A class using the [Factory Method](http://en.wikipedia.org/wiki/Factory_method_pattern) pattern can serve up different parsers depending on the file's extension.
+假设你需要加载文件到编辑器中，在用户选择文件之前，你无法知道文件的格式。一个使用[工厂方法模式](http://en.wikipedia.org/wiki/Factory_method_pattern)的类可以根据文件的扩展名来给出不一样的解析器。
 
 {% highlight coffeescript %}
 class HTMLParser
@@ -44,6 +44,6 @@ factory.makeParser("example.md").type # => "Markdown parser"
 factory.makeParser("example.json").type # => "JSON parser"
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-In the example, you can ignore the specifics of the file's format and focus on the parsed content.  A more advanced Factory Method might, for instance, also search for versioning data within the file itself before returning a more precise parser (e.g. an HTML5 parser instead of an HTML v4 parser).
+在上例中，你可以忽略不用文件格式的特点，把注意力放在解析的内容。甚至还有更高级的工厂方法，例如，这些方法可以在文件中查找文件版本数据，返回更加精确的解析器（例如使用HTML5解析器代替HTML4解析器）。
