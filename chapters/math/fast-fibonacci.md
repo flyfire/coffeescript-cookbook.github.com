@@ -5,8 +5,6 @@ chapter: Math
 ---
 ## 问题
 
-You would like to calculate a number N in the Fibonacci sequence but want
-to do it quickly.
 你想计算一个数字N的斐波那契序列，但是希望计算更加效率快捷。
 
 ## 方法
