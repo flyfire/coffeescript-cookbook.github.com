@@ -1,21 +1,21 @@
 ---
 layout: recipe
-title: Math Constants
+title: 数学常数
 chapter: Math
 ---
-## Problem
+## 问题
 
-You need to use common mathematical constants like pi or e.
+你想使用常见的数学常数，例如π,e。
 
-## Solution
+## 方法
 
-Use Javascript's Math object to provide commonly needed mathematical constants.
+使用JavaScript的Math对象提供的常用数学常数。
 
 {% highlight coffeescript %}
 Math.PI
 # => 3.141592653589793
 
-# Note: Capitalization matters! This produces no output, it's undefined.
+# 提示：大小写注意！这个过程没有输出结果，因为Pi未定义。
 Math.Pi
 # =>
 
@@ -28,7 +28,7 @@ Math.SQRT2
 Math.SQRT1_2
 # => 0.7071067811865476
 
-# Natural log of 2. ln(2)
+# 2的自然对数. ln(2)
 Math.LN2
 # => 0.6931471805599453
 
@@ -43,6 +43,7 @@ Math.LOG10E
 
 {% endhighlight %}
 
-## Discussion
+## 讨论
 
 For another example of how a math constant is used in a real world problem, refer to the [Converting Radians and Degrees](/chapters/math/radians-degrees) section of this Math chapter.
+还有一个例子是一个数学常数如何在现实世界中使用，请参看Math章节的 [度与弧度转换](/coffeescript-cookbook.github.com/chapters/math/radians-degrees)部分。

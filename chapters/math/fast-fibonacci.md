@@ -1,19 +1,19 @@
 ---
 layout: recipe
-title: Faster Fibonacci Algorithm
+title: 更快的斐波那契算法 
 chapter: Math
 ---
-## Problem
+## 问题
 
 You would like to calculate a number N in the Fibonacci sequence but want
 to do it quickly.
+你想计算一个数字N的斐波那契序列，但是希望计算更加效率快捷。
 
-## Solution
+## 方法
 
-The following solution (which can still be improved on) was originally
-talked about on Robin Houston's blog.
+以下的解决方案（仍有待提高）来源于罗宾休斯(Robin Houston)的博客中。
 
-Here are a few links talking about the algorithm and ways to improve it:
+这里有一些链接讨论关于改进的算法和方法:
 * [http://bosker.wordpress.com/2011/04/29/the-worst-algorithm-in-the-world/](http://bosker.wordpress.com/2011/04/29/the-worst-algorithm-in-the-world/)
 * [http://www.math.rutgers.edu/~erowland/fibonacci](http://www.math.rutgers.edu/~erowland/fibonacci.html)
 * [http://jsfromhell.com/classes/bignumber](http://jsfromhell.com/classes/bignumber)
@@ -21,7 +21,7 @@ Here are a few links talking about the algorithm and ways to improve it:
 * [http://bigintegers.blogspot.com/2010/11/square-division-power-square-root](http://bigintegers.blogspot.com/2010/11/square-division-power-square-root.html)
 * [http://bugs.python.org/issue3451](http://bugs.python.org/issue3451)
 
-This code is in gist form here:
+代码来源于gist:
 [https://gist.github.com/1032685](https://gist.github.com/1032685)
 
 {% highlight coffeescript %}
@@ -30,13 +30,13 @@ Author: Jason Giedymin <jasong _a_t_ apache -dot- org>
         http://www.jasongiedymin.com
         https://github.com/JasonGiedymin
 
-This CoffeeScript Javascript Fast Fibonacci code is
-based on the python code from Robin Houston's blog.
-See below links.
+CoffeeScript编译的JavaScript实现的快速菲波那契算法是基于Robin Houston的博客中的python代码。
+参看上面的链接
 
 A few things I want to introduce in time are implementions of
 Newtonian, Burnikel / Ziegler, and Binet's algorithms on top
 of a Big Number framework.
+我想给大家及时讲解一些Newtonian, Burnikel / Ziegler和 Binet 在 Big Number框架上的具体实现。
 
 Todo:
 - https://github.com/substack/node-bigint
@@ -96,6 +96,6 @@ diff = (new Date).getTime() - start;
 console.log "[#{calc_value}] took #{diff} ms."
 {% endhighlight %}
 
-## Discussion
+## 讨论
 
-Questions?
+还有问题吗？
