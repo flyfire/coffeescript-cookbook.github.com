@@ -1,15 +1,15 @@
 ---
 layout: recipe
-title: A Random Integer Function
+title: 一个随机整数的函数
 chapter: Math
 ---
-## Problem
+## 问题
 
-You'd like to get a random integer between two integers, inclusive.
+你想获得闭区间的两个数字中间的随机数。
 
-## Solution
+## 方法
 
-Use the following function.
+用下面的方法
 
 {% highlight coffeescript %}
 randomInt = (lower, upper=0) ->
@@ -27,6 +27,6 @@ randomInt = (lower, upper=0) ->
 # => [7,3,9,1,8,5,4,10,10,8]
 {% endhighlight %}
 
-## Discussion
+## 讨论
 
-Questions?
+有问题吗？

@@ -1,25 +1,25 @@
 ---
 layout: recipe
-title: Converting Radians and Degrees
+title: 弧度与度转换
 chapter: Math
 ---
-## Problem
+## 问题
 
-You need to convert between radians and degrees.
+你需要在弧度与度之间转换。
 
-## Solution
+## 方法
 
-Use Javascript's Math.PI and a simple formula to convert between the two.
+使用JavaScript的Math.PI和一个简单的公式在弧度与度之间进行转换。
 
 {% highlight coffeescript %}
-# To convert from radians to degrees
+# 从弧度到度
 radiansToDegrees = (radians) ->
     degrees = radians * 180 / Math.PI
 
 radiansToDegrees(1)
 # => 57.29577951308232
 
-# To convert from degrees to radians
+# 从度到弧度
 degreesToRadians = (degrees) ->
     radians = degrees * Math.PI / 180
 
@@ -27,6 +27,6 @@ degreesToRadians(1)
 # => 0.017453292519943295
 {% endhighlight %}
 
-## Discussion
+## 讨论
 
-Questions?
+有问题吗?
