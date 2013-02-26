@@ -1,13 +1,13 @@
 ---
 layout: recipe
-title: Generating Predictable Random Numbers
+title: 生成可预测的随机数（未翻译完）
 chapter: Math
 ---
-## Problem
+## 问题
 
 You need to generate a random number in a certain range, but you also need to be able to "seed" the generator to deliver predictable values.
 
-## Solution
+## 方法
 
 Write your own random number generator. There are a LOT of ways to do this. Here's a simple one. _This generator is +ABSOLUTELY NOT+ acceptable for cryptographic purposes!_
 
@@ -44,7 +44,7 @@ class Rand
     min + this.rand(max-min)
 {% endhighlight %}
 
-## Discussion
+## 讨论 
 
 JavaScript and CoffeeScript do not provide a seedable random number generator. Writing your own will be an exercise in trading off the amount of randomness with the simplicity of the generator. A full discussion of randomness is beyond the scope of this cookbook; for further reading consult Donald Knuth's _The Art of Computer Programming_, Volume II, Chapter 3, "Random Numbers", and _Numerical Recipes in C_, 2nd Edition, Chapter 7, "Random Numbers".
 

@@ -45,5 +45,4 @@ Math.LOG10E
 
 ## 讨论
 
-For another example of how a math constant is used in a real world problem, refer to the [Converting Radians and Degrees](/chapters/math/radians-degrees) section of this Math chapter.
 还有一个例子是一个数学常数如何在现实世界中使用，请参看Math章节的 [度与弧度转换](/coffeescript-cookbook.github.com/chapters/math/radians-degrees)部分。
