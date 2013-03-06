@@ -28,10 +28,9 @@ console.log "Listening to #{domain}:#{port}"
 server.listen port, domain
 {% endhighlight %}
 
-### Example Usage
 ### 使用示例
 
-Accessed by the [Basic Client](/chapters/networking/basic-client):
+使用[简单的客户端](/chapters/networking/basic-client)访问：
 
 {% highlight console %}
 $ coffee basic-server.coffee
@@ -43,12 +42,12 @@ Received connection from 127.0.0.1
 
 ## 详解
 
-The function passed to @net.createServer@ receives the new socket provided for each new connection to a client.  This basic server simply socializes with its visitors but a hard-working server would pass this socket along to a dedicated handler and then return to the task of waiting for the next client.
+传递给@net.createServer@的函数接受一个新的socket对象，这个socket对象会提供一个指向客户端的链接。这种简单的服务直接就和访问这个沟通，但如果是比较繁忙的服务器。会把这个socket单独传递给一个专属的处理器。然后会过来继续会过来完成任务——等待下一个客户端请求。
 
-See also the [Basic Client](/chapters/networking/basic-client), [Bi-Directional Server](/chapters/networking/bi-directional-server), and [Bi-Directional Client](/chapters/networking/bi-directional-client) recipes.
+参看[简单的客户端](/chapters/networking/basic-client), [双向服务器](/chapters/networking/bi-directional-server), 以及[双向客户端](/chapters/networking/bi-directional-client)这几分“菜肴”.
 
-### Exercises
+
 ### 练习
 
-* Add support for choosing the target domain and port based on command-line arguments or from a configuration file.
+* 添加自定义domain和端口的支持，可基于命令行参数，也可以使用配置文件。
 
