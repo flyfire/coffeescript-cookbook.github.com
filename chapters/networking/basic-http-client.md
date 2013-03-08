@@ -1,18 +1,18 @@
 ---
 layout: recipe
-title: Basic HTTP Client
+title: 最简单的HTTP客户端
 chapter: Networking
 ---
 
-## Problem
+## 问题
 
-You want to create a HTTP client.
+你想创建一个HTTP客户端
 
-## Solution
+## 方法
 
-In this recipe, we'll use [node.js](http://nodejs.org/)'s HTTP library. We'll go from a simple GET request example to a client which returns the external IP of a computer.
+在本菜谱中，我们将使用[node.js](http://nodejs.org/)的HTTP库。我们先从一个简单的GET请求示例开始，然后实现可以返回电脑真实IP的客户端。
 
-### GET something
+## GET些啥
 
 {% highlight coffeescript %}
 http = require 'http'
@@ -21,7 +21,7 @@ http.get { host: 'www.google.com' }, (res) ->
     console.log res.statusCode
 {% endhighlight %}
 
-The `get` function, from node.js's `http` module, issues a GET request to a HTTP server. The response comes in the form of a callback, which we can handle in a function. This example merely prints the response status code. Check it out:
+`get`函数是node.js的`http`模块提供，可以向HTTP服务器发送一个GET请求。响应会以回调的形式返回，我们可以在一个函数中处理它。本例只是简单地把响应的状态码打印出来。请看：
 
 {% highlight console %}
 $ coffee http-client.coffee 
@@ -29,9 +29,9 @@ $ coffee http-client.coffee
 
 {% endhighlight %}
 
-### What's my IP?
+### 我的IP地址是多杀？
 
-If you are inside a network which relies on [NAT](http://en.wikipedia.org/wiki/Network_address_translation) such as a LAN, you probably have faced the issue of finding out what's your external IP address. Let's write a small coffeescript for this.
+如果你处在一个像LAN这样的网络中，依赖于[NAT](http://en.wikipedia.org/wiki/Network_address_translation)，你有时候可能会碰到这样的问题，我真实的IP地址是多少呢？让我编写一小段coffeescript来搞定它：
 
 {% highlight coffeescript %}
 http = require 'http'
@@ -44,20 +44,19 @@ http.get { host: 'checkip.dyndns.org' }, (res) ->
         console.log data.match(/([0-9]+\.){3}[0-9]+/)[0]
 {% endhighlight %}
 
-We can get the data from the result object by listening on its `'data'` event; and know that it has come to an end once the `'end'` event has been fired. When that happens, we can do a simple regular expression match to extract our IP address. Try it:
+我们可以监听`'data'`事件，从返回的对象中获取数据；并且当`'end'`事件触发时，我们可以知道数据传送完了。当传送结束时，我们可以使用一个简单的正则表达式来匹配出我们的IP地址，试试看：
 
 {% highlight console %}
 $ coffee http-client.coffee 
 123.123.123.123
 {% endhighlight %}
 
-## Discussion
+## 详解
 
-Note that `http.get` is a shortcut of `http.request`. The latter allows you to issue HTTP requests with different methods, such as POST or PUT.
+要知道`http.get`是`http.request`的快捷方式。后者允许你使用不同的方法发送HTTP请求，比如说POST或者PUT。
 
-For API and overall information on this subject, check node.js's [http](http://nodejs.org/docs/latest/api/http.html) and [https](http://nodejs.org/docs/latest/api/https.html) documentation pages. Also, the [HTTP spec](http://www.ietf.org/rfc/rfc2616.txt) might come in handy.
+关于这个主题的API或者更为详细的信息，请参考[http](http://nodejs.org/docs/latest/api/http.html)以及[https](http://nodejs.org/docs/latest/api/https.html)这两页文档。而且[HTTP spec](http://www.ietf.org/rfc/rfc2616.txt)迟早也会用到。
 
-### Exercises
+### 练习
 
-* Create a client for the key-value store HTTP server, from the [Basic HTTP Server](basic-http-server) recipe.
-
+* 基于[Basic HTTP Server](basic-http-server)，创建一个针对键值对存储的HTTP服务器的客户端。

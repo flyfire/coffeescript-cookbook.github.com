@@ -1,20 +1,20 @@
 ---
 layout: recipe
-title: Basic HTTP Server
+title: 最简单的HTTP服务器
 chapter: Networking
 ---
 
-## Problem
+## 问题
 
-You want to create a HTTP server over a network. Over the course of this recipe, we'll go step by step from the smallest server possible to a functional key-value store.
+你想到网络中搭建一个HTTP服务器。在本菜谱中，我们从最简单的服务器到一个功能完好的键值对存储服务器，一步步地学习创建HTTP服务器。
 
-## Solution
+## 方法
 
-We'll use [node.js](http://nodejs.org/)'s HTTP library to our own selfish purposes and create the simplest web server possible in Coffeescript.
+处于自私的目的，我们将使用[node.js](http://nodejs.org/)的HTTP类库，使用CoffeeScript创建最简单的服务器。
 
-### Say 'hi\n'
+### 问候 'hi\n'
 
-We can start by importing node.js's HTTP module. This contains `createServer` which, given a simple request handler, returns a HTTP server. We can use that server to listen on a TCP port.
+我们可以从引入node.js的HTTP模块开始。该模块包含了`createServer`，这是一个简单的请求处理器，返回一个HTTP服务器。我们让这个服务器监听在一个TCP端口上。
 
 {% highlight coffeescript %}
 http = require 'http'
@@ -22,7 +22,8 @@ server = http.createServer (req, res) -> res.end 'hi\n'
 server.listen 8000
 {% endhighlight %}
 
-To run this example, simply put in a file and run it. You can kill it with `Ctrl-C`. We can test it using the `curl` command, available on most \*nix platforms:
+把这些代码放在一个文件中运行，就可以执行这个示例。你可以使用`Ctrl-C`来关掉它。我们可以使用`curl`命令测试，在绝大多数的\*nix平台上都可以运行：
+
 
 {% highlight console %}
 $ curl -D - http://localhost:8000/
@@ -33,9 +34,9 @@ Transfer-Encoding: chunked
 hi
 {% endhighlight %}
 
-### What's going on? 
+### 接下来呢？
 
-Let's get a little bit more feedback on what's happening on our server. While we're at it, we could also be friendlier to our clients and provide them some HTTP headers.
+让我们弄点反馈，看看我们服务器上发生了什么。同时，我们还对我们用户更友好一点，并为他们提供一些HTTP头。
 
 {% highlight coffeescript %}
 http = require 'http'
@@ -51,7 +52,7 @@ server = http.createServer (req, res) ->
 server.listen 8000
 {% endhighlight %}
 
-Try to access it once again, but this time use different URL paths, such as `http://localhost:8000/coffee`. You'll see something like this on the server console:
+试着再访问一次这个服务器，但是这次要使用其他的URL地址。比如 `http://localhost:8000/coffee`。你可以在服务器上看到如下的调试信息：
 
 {% highlight console %}
 $ coffee http-server.coffee 
@@ -60,7 +61,7 @@ GET /coffee
 GET /user/1337
 {% endhighlight %}
 
-### GETting stuff
+### GET点啥
 
 What if our webserver was able to hold some data? We'll try to come up with a simple key-value store in which elements are retrievable via GET requests. Provide a key on the request path and the server will return the corresponding value &mdash; or 404 if it doesn't exist.
 
