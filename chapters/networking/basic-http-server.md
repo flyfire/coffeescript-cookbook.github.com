@@ -63,7 +63,7 @@ GET /user/1337
 
 ### GET点啥
 
-What if our webserver was able to hold some data? We'll try to come up with a simple key-value store in which elements are retrievable via GET requests. Provide a key on the request path and the server will return the corresponding value &mdash; or 404 if it doesn't exist.
+服务器上放点数据？我们就放一个简单的键值存储吧，键值元素可以通过GET请求获取。把key放到请求路径中，服务器就会返回相应的value &mdash，如果不错在的话就返回404。
 
 {% highlight coffeescript %}
 http = require 'http'
@@ -90,7 +90,7 @@ server = http.createServer (req, res) ->
 server.listen 8000
 {% endhighlight %}
 
-We can try several URLs to see how it responds:
+我们可以找几个URLs尝试一下，看看他是如何返回的：
 
 {% highlight console %}
 $ curl -D - http://localhost:8000/coffee
@@ -108,9 +108,9 @@ Transfer-Encoding: chunked
 
 {% endhighlight %}
 
-### Use your head(ers)
+### 加上headers
 
-Let's face it, `text/plain` is kind of lame. How about if we use something hip like `application/json` or `text/xml`? Also, our store retrieval process could use a bit of refactoring &mdash; how about some exception throwing &amp; handling? Let's see what we can come up with:
+承认吧，`text/plain`挺无聊的。我们要不使用`application/json`或者`text/xml`等试试看？并且，我们的读取存储的过程是不是应该重构一下&mdash，添加点异常处理？让我们看看能产生什么效果：
 
 {% highlight coffeescript %}
 http = require 'http'
@@ -152,7 +152,7 @@ server = http.createServer (req, res) ->
 server.listen 8000
 {% endhighlight %}
 
-This server will still return the value which matches a given key, or 404 if non-existent. But it will structure the response either in JSON or XML, according to the `Accept` header. See for yourself:
+服务器返回的还是key能够匹配到的值，无匹配的话就返回404。但是它根据`Accept`头，把返回值格式化成了JSON或者XML。自己试试看：
 
 {% highlight console %}
 $ curl http://localhost:8000/
@@ -169,9 +169,9 @@ $ curl -H "Accept: image/png" http://localhost:8000/coffee
 Unknown format
 {% endhighlight %}
 
-### You gotta give to get back
+### 你必须让他们有恢复的能力
 
-The obvious last step in our adventure is to provide the client the ability to store data. We'll keep our RESTiness by listening to POST requests for this purpose.
+在我们冒险旅行的上一步，给我们的客户端提供了存储数据的能力。我们会保证我们是RESTfull的，提供对POST请求的监听。
 
 {% highlight coffeescript %}
 http = require 'http'
@@ -235,7 +235,7 @@ server = http.createServer (req, res) ->
 server.listen 8000
 {% endhighlight %}
 
-Notice how the data is received in a POST request. By attaching some handlers on the `'data'` and `'end'` events of the request object, we're able to buffer and finally save the data from the client in the `store`.
+请注意是如何接受POST请求中的数据的。听过给请求对象的`'data'`和`'end'`事件绑定处理器来实现。我们可以把来来自客户端的数据暂存或者最终存储到`store`中。
 
 {% highlight console %}
 $ curl -D - http://localhost:8000/cookie
@@ -251,14 +251,15 @@ HTTP/1.1 200 OK # ...
 {% endhighlight %}
 
 ## Discussion
+## 讨论
 
-Give `http.createServer` a function in the shape of `(request, response) -> ...` and it will return a server object, which we can use to listen on a port. Interact with the `request` and `response` objects to give the server its behaviour. Listen on port 8000 using `server.listen 8000`.
+给`http.createServer`传递一个型如`(request, respone) ->...`这样的函数，它就会返回一个server对象，我们可以使用这个server对象监听某个端口。与`request`和`response`对象交互，实现server的行为。使用`server.listen 8000`来监听8000端口。
 
-For API and overall information on this subject, check node.js's [http](http://nodejs.org/docs/latest/api/http.html) and [https](http://nodejs.org/docs/latest/api/https.html) documentation pages. Also, the [HTTP spec](http://www.ietf.org/rfc/rfc2616.txt) might come in handy.
+关于这个主题的API或者更为详细的信息，请参考[http](http://nodejs.org/docs/latest/api/http.html)以及[https](http://nodejs.org/docs/latest/api/https.html)这两页文档。而且[HTTP spec](http://www.ietf.org/rfc/rfc2616.txt)迟早也会用到。
 
-### Exercises
+### 练习
 
-* Create a layer in between the server and the developer which would allow the developer to do something like:
+* 在服务器和开发者之间建立一个layer（layer），允许开发者可以像下面这样写：
 
 {% highlight coffeescript %}
 server = layer.createServer
@@ -269,4 +270,3 @@ server = layer.createServer
     'PUT /image': (req, res) ->
         ...
 {% endhighlight %}
-
