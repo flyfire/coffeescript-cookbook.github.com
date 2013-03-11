@@ -3,13 +3,14 @@ layout: recipe
 title: SQLite
 chapter: Databases
 ---
-## Problem
 
-You need to interface with a [SQLite](http://www.sqlite.org/) database from inside of Node.js.
+## 问题
 
-## Solution
+你想在Node.js中访问[SQLite](http://www.sqlite.org/)数据库。
 
-Use the [SQLite module](http://code.google.com/p/node-sqlite/).
+## 方法
+
+使用[SQLite module](http://code.google.com/p/node-sqlite/)。
 
 {% highlight coffeescript %}
 sqlite = require 'sqlite'
@@ -44,9 +45,10 @@ db.open ":memory:", (openErr) ->
 	exampleCreate()
 {% endhighlight %}
 
-## Discussion
+## 讨论
 
-You can also prepare your SQL queries beforehand:
+你也可以事先准备好SQL语句：
+
 
 {% highlight coffeescript %}
 sqlite = require 'sqlite'
@@ -88,5 +90,5 @@ db.open ":memory:", (openErr) ->
 	])
 {% endhighlight %}
 
-The [SQLite version of SQL](http://www.sqlite.org/lang.html) and the [node-sqlite module documentation](https://github.com/orlandov/node-sqlite#readme) provide more complete information.
+[SQLite版的SQL](http://www.sqlite.org/lang.html)和[node-sqlite模块文档](https://github.com/orlandov/node-sqlite#readme)提供了更完整的信息。
 
