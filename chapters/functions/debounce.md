@@ -11,7 +11,7 @@ You want to execute a function only once, coalescing multiple sequential calls i
 
 ## 方法 Solution
 
-使用一个有名的函数：
+使用一个具名函数：
 
 With a named function:
 
