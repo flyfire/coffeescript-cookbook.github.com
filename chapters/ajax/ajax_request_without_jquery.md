@@ -106,7 +106,7 @@ Line 14 sends our request to the server.
 
 ## 支持老掉牙的浏览器 Older Browser Support
 
-如果你的程序需要支持老版本的Internet Explorer，你需要确保XMLHttpRequest对象是否存在。做法就是在创建XMLHttpRequest示例之前，先包含下面这段代码。
+如果你的程序需要支持老版本的Internet Explorer，你需要确保XMLHttpRequest对象是否存在。做法就是在创建XMLHttpRequest实例之前，先包含下面这段代码。
 
 If your application needs to target older versions of Internet Explorer, you will need to ensure the XMLHttpRequest object exists.  You can do this by including this code before creating the XMLHttpRequest instance.
 
