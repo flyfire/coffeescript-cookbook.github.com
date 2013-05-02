@@ -1,15 +1,17 @@
 ---
 layout: recipe
-title: Replacing HTML Tags with HTML Named Entities
+title: 使用HTML字符实体替换HTML标签 Replacing HTML Tags with HTML Named Entities
 chapter: Regular Expressions
 ---
-## Problem
+## 问题 Problem
+
+你需要使用字符实体来替换HTML标签：
 
 You need to replace HTML tags with named entities:
 
 `<br/> => &lt;br/&gt;`
 
-## Solution
+## 办法 Solution
 
 {% highlight coffeescript %}
 htmlEncode = (str) ->
@@ -20,6 +22,8 @@ htmlEncode('<a href="http://bn.com">Barnes & Noble</a>')
 # => '&lt;a href=&quot;http://bn.com&quot;&gt;Barnes &amp; Noble&lt;/a&gt;'
 {% endhighlight %}
 
-## Discussion
+## 讨论 Discussion
+
+可能还有比上面方法更好的实现。
 
 There are probably better ways to implement the above method.
