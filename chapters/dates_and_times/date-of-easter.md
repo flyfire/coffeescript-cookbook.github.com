@@ -41,7 +41,7 @@ gregorianEaster = (year = (new Date).getFullYear()) ->
 
 注意！JavaScript把月份记作从0到11，因此如果调用`.getMonth()`，日期在三月份，则返回值为2，但是上面这个函数返回的是3。如果你想保持一致，你可以修改这个函数。
 
-NB! Javascript numbers months from 0 to 11 so .getMonth() for date in March will return 2, this function will return 3.You can modify the function if you want this to be consistent.
+NB! Javascript numbers months from 0 to 11 so `.getMonth()` for date in March will return 2, this function will return 3. You can modify the function if you want this to be consistent.
 
 这个函数还是用了`~~`技巧来代替`Math.floor()`。
 
