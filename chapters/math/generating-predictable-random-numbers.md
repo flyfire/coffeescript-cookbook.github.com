@@ -1,15 +1,15 @@
 ---
 layout: recipe
-title: 生成可预测的随机数（未翻译完）
+title: 生成可预测的随机数
 chapter: Math
 ---
 ## 问题
 
-You need to generate a random number in a certain range, but you also need to be able to "seed" the generator to deliver predictable values.
+你需要在一定范围内生成一个随机数，但是你也需要设定生成程序以提供可预测的数据。
 
 ## 方法
 
-Write your own random number generator. There are a LOT of ways to do this. Here's a simple one. _This generator is +ABSOLUTELY NOT+ acceptable for cryptographic purposes!_
+写你自己的随机数生成程序。有__很多__种方法去实现它。这里有个简单的示例。_这个生成程序绝对+不适用+于加密目的！_
 
 {% highlight coffeescript %}
 class Rand
@@ -46,20 +46,21 @@ class Rand
 
 ## 讨论 
 
-JavaScript and CoffeeScript do not provide a seedable random number generator. Writing your own will be an exercise in trading off the amount of randomness with the simplicity of the generator. A full discussion of randomness is beyond the scope of this cookbook; for further reading consult Donald Knuth's _The Art of Computer Programming_, Volume II, Chapter 3, "Random Numbers", and _Numerical Recipes in C_, 2nd Edition, Chapter 7, "Random Numbers".
+JavaScript 和 CoffeeScript 并没有提供可以预先设置的随机数生成程序。写你自己的随机函数将主要练习用一种用简单随机生成程序去生成大量随机数。关于随机过程的讨论超出了这本Cookbook的范畴。有兴趣的同学可以阅读Donald Knuth的_The Art of Computer Programming_的第二篇第三章节"Random Numbles"，以及_Numerical Recipes in C_第二版第七章"Random Numbers"。
 
-A brief explanation of this random number generator is in order, however. It is a Linear Congruential Pseudorandom Number Generator. LCPRNG's operate on the mathematical formula `I<sub>j+1</sub> = (aI<sub>j</sub>+c) % m`, where a is the multiplier, c is the addition offset, and m is the modulus.
- Each time a random number is requested, a very large multiplication and addition are performed -- "very large" relative to the key space -- and the resulting number is modulused back down into the keyspace.
+然而，一个关于随机数生成程序的简单解释是有序。它就是Linear Congruential Pseudorandom Number Generator(线性全等伪随机数产生器)。LCPRNG在数学上的表现形式是`I<sub>j+1</sub> = (aI<sub>j</sub>+c) % m`，在公式中，a是乘数，c是偏移常数，m是模数。
 
-This generator has a period of 2<sup>32</sup>. It is absolutely unacceptable for cryptographic purposes, but for most simple randomness requirements it is quite adequate. `randn()` will traverse the entire keyspace before repeating itself, and the next number is determined by the previous one.
+每请求一次随机数，一个很大规模的乘法器和加法器在运行——"很大"是相对于主要的区间而言——并且结果数被模除后，分布在主要的区间中。
 
-If you want to tinker with this generator, you are _strongly_ encouraged to read Chapter 3 of Knuth's _The Art of Computer Programming_. Random number generation is VERY easy to screw up, and Knuth explains how to tell a good RNG from a bad one.
+这种随机数生成器的位数范围是2<sup>32</sup>，如果以加密为目的，这几乎不可以接受，要不是大多数简单没有规则的需求，它足够适用。在重复自己之前，`randn()`会覆盖整个区间，而下一个随机数由前一个决定。
 
-Avoid the temptation to modulus the output of this generator. If you need an integer range, use division. Linear Congruential generators are very nonrandom in their lower bits. This one in particular always generates an odd number from an even seed, and vice versa. So if you need a random 0 or 1, do NOT use
+如果你想粗略的修补一下随机程序，_强烈_建议你阅读 Knuth 的 _The Art of Computer Programming_ 的第三章。随机数生成程序很容易被搞砸，而且 Knuth 从一个糟糕的案例中解释怎样去判断一个好的随机数生成程序(RNG, Random Number Generator)。
+
+避免把这个生成的结果进行模除。如果你需要一个整数的范围，用除法。线性全等生成器在数据位数很小时并不随机。这种算法特别在当偶数种子的时候，会产生奇数。因此，如果你需要一个0或1的随机数，__不要__使用下面的方法：
 
 {% highlight coffeescript %}
 # NOT random! Do not do this!
 r.randn() % 2
 {% endhighlight %}
 
-because you will most definitely not get random digits. Use `r.randi(2)` instead.
+因为你几乎可以肯定不会得到随机位数。用`r.randi(2)`代替上面的方法。
