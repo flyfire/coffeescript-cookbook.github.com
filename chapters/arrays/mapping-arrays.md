@@ -5,7 +5,7 @@ chapter: Arrays
 ---
 ## 问题 Problem
 
-你手里有个对象数组，你想将它映射为另一个数组，就像Ruby的数组。
+你手里有个对象数组，你想将它映射为另一个数组，就像Ruby的数组映射。
 
 You have an array of objects and want to map them to another array, similar to Ruby's map.
 

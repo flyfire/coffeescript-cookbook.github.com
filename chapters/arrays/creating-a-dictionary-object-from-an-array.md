@@ -1,9 +1,11 @@
 ---
 layout: recipe
-title: Creating a dictionary Object from an Array
+title: 基于数组构建字典对象 Creating a dictionary Object from an Array
 chapter: Arrays
 ---
-## Problem
+## 问题 Problem
+
+你有一个对象数组，例如：
 
 You have an Array of Objects, such as:
 
@@ -20,9 +22,13 @@ cats = [
 ]
 {% endhighlight %}
 
+但是你想像放字典一样访问它，例如`cat["Bubbles"]`。
+
 But you want to access it as a dictionary by key, like `cats["Bubbles"]`.
 
-## Solution
+## 方法 Solution
+
+你需要把数组转化成一个对象，使用reduce来实现。
 
 You need to convert your array into an Object. Use reduce for this.
 
@@ -31,6 +37,8 @@ You need to convert your array into an Object. Use reduce for this.
 Array::toDict = (key) ->
   @reduce ((dict, obj) -> dict[ obj[key] ] = obj if obj[key]?; return dict), {}
 {% endhighlight %}
+
+用法：
 
 To use this:
 
@@ -50,6 +58,8 @@ Array::toDict = (key) ->
   dict[obj[key]] = obj for obj in this when obj[key]?
   dict
 {% endhighlight %}
+
+如果你使用Underscore.js，你可以创建一个mixin：
 
 If you use Underscore.js, you can create a mixin:
 

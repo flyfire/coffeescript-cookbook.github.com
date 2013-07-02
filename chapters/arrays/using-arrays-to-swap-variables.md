@@ -1,13 +1,17 @@
 ---
 layout: recipe
-title: Using Arrays to Swap Variables
+title: 使用数组来做值交换 Using Arrays to Swap Variables
 chapter: Arrays
 ---
-## Problem
+## 问题 Problem
+
+你想使用数组来做值交换。
 
 You want to use an array to swap variables.
 
-## Solution
+## 方法 Solution
+
+使用CoffeeScript的[解构赋值](http://jashkenas.github.com/coffee-script/#destructuring)语法：
 
 Use CoffeeScript's [destructuring assignment](http://jashkenas.github.com/coffee-script/#destructuring) syntax:
 
@@ -24,9 +28,13 @@ b
 # => 1
 {% endhighlight %}
 
-## Discussion
+## 讨论 Discussion
+
+解构赋值允许交换两个值，而无需使用中间变量。
 
 Destructuring assignment allows swapping two values without the use of a temporary variable.
+
+当迭代数组需要保证迭代最短的数组时，这个特性相当有用：
 
 This can be useful when traversing arrays and ensuring iteration only happens over the shortest one:
 
