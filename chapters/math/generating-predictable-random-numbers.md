@@ -9,7 +9,8 @@ chapter: Math
 
 ## 方法
 
-写你自己的随机数生成程序。有__很多__种方法去实现它。这里有个简单的示例。_这个生成程序绝对+不适用+于加密目的！_
+写你自己的随机数生成程序。有 _很多_ 种方法去实现它。这里有个简单的示例。
+_这个生成程序绝对 不适用 于加密目的！_
 
 {% highlight coffeescript %}
 class Rand
@@ -46,7 +47,7 @@ class Rand
 
 ## 讨论 
 
-JavaScript 和 CoffeeScript 并没有提供可以预先设置的随机数生成程序。写你自己的随机函数将主要练习用一种用简单随机生成程序去生成大量随机数。关于随机过程的讨论超出了这本Cookbook的范畴。有兴趣的同学可以阅读Donald Knuth的_The Art of Computer Programming_的第二篇第三章节"Random Numbles"，以及_Numerical Recipes in C_第二版第七章"Random Numbers"。
+JavaScript 和 CoffeeScript 并没有提供可以预先设置的随机数生成程序。写你自己的随机函数将主要练习用一种用简单随机生成程序去生成大量随机数。关于随机过程的讨论超出了这本Cookbook的范畴。有兴趣的同学可以阅读Donald Knuth的_The Art of Computer Programming_的第二篇第三章节 "Random Numbles"，以及_Numerical Recipes in C_第二版第七章 "Random Numbers"。
 
 然而，一个关于随机数生成程序的简单解释是有序。它就是Linear Congruential Pseudorandom Number Generator(线性全等伪随机数产生器)。LCPRNG在数学上的表现形式是`I<sub>j+1</sub> = (aI<sub>j</sub>+c) % m`，在公式中，a是乘数，c是偏移常数，m是模数。
 
